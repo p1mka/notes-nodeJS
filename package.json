@@ -1,0 +1,27 @@
+{
+  "name": "note-app",
+  "version": "1.0.0",
+  "description": "This is simple nodeJS App",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "serve": "nodemon index.js"
+  },
+  "keywords": [
+    "nodeJS",
+    "notes"
+  ],
+  "author": "Kirill <kirillmaznov@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@types/ejs": "^3.1.3",
+    "chalk": "^4.1.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/yargs": "^17.0.25",
+    "nodemon": "^3.0.1"
+  }
+}
