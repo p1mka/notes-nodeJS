@@ -6,10 +6,9 @@ document.addEventListener("click", (e) => {
     });
   } else if (e.target.dataset.type === "edit") {
     const newTitle = prompt("Введите новое значение:");
-
     !newTitle
       ? null
-      : edit(id, newTitle).then(() => {
+      : edit({ id: id, title: newTitle }).then(() => {
           e.target.closest("li").firstChild.textContent = newTitle;
         });
   }
@@ -21,12 +20,12 @@ async function remove(id) {
   });
 }
 
-async function edit(id, title) {
+async function edit({ id, title }) {
   await fetch(`/${id}`, {
     method: "PUT",
-    headers: { "Content-Type": "Location/json;charset=utf-8" },
+    headers: { "Content-Type": "application/json;charset=utf-8" },
     body: JSON.stringify({
-      title,
+      title: title,
     }),
   });
 }
